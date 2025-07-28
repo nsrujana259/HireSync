@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-
+const cors=require("cors");
 const authRoutes = require("./routes/authRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const applicationRoutes = require("./routes/applicationRoutes");
@@ -22,7 +22,12 @@ app.use((req, res, next) => {
   }
   next();
 });
-
+app.use(cors({
+  origin: "https://hiresync-frontend.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+app.options("*", cors()); 
 // ✅ JSON body parser
 app.use(express.json());
 
