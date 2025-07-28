@@ -12,7 +12,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://hiresync-backend.onrender.com/api/auth/login', {
+      const res = await axios.post('https://hiresync-3492.onrender.com/api/auth/login', {
         email,
         password
       });
