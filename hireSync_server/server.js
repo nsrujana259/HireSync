@@ -37,6 +37,10 @@ app.use("/api/jobs", jobRoutes);
 app.use("/api/applications", applicationRoutes);
 app.use("/api/upload", uploadRoute);
 
+app.get("/", (req, res) => {
+  res.send("✅ API working fine!");
+});
+
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
