@@ -15,12 +15,10 @@ const app = express();
 
 // CORS config
 app.use(cors({
-  origin: ["https://hiresync-frontend.onrender.com"], // ✅ Frontend domain
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
+  origin: "https://hiresync-frontend.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
 }));
-
-app.options("*", cors());
 
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
