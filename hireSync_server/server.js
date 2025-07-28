@@ -15,7 +15,7 @@ const app = express();
 
 // CORS config
 app.use(cors({
-  origin: ["https://hiresync-frontend.onrender.com"], // ✅ allow frontend domain
+  origin: ["https://hiresync-frontend.onrender.com"], // ✅ Frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
@@ -31,8 +31,8 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("✅ MongoDB Connected"))
 .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// Use routes
-app.use("/api/auth", authRoutes);
+// Route usage
+app.use("/api/auth", authRoutes); // 🔁 was /authRoutes
 app.use("/api/jobs", jobRoutes);
 app.use("/api/applications", applicationRoutes);
 app.use("/api/upload", uploadRoute);
