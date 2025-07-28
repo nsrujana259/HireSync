@@ -14,8 +14,11 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://hiresync-backend.onrender.com/api/auth/register', data => {
-        name, email, password, role
+      await axios.post('https://hiresync-backend.onrender.com/api/auth/register', {
+        name,
+        email,
+        password,
+        role,
       });
       navigate('/login');
     } catch (err) {
@@ -37,6 +40,7 @@ const RegisterPage = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              autoComplete="name"
             />
           </div>
           <div className="form-group">
@@ -47,6 +51,7 @@ const RegisterPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              autoComplete="email"
             />
           </div>
           <div className="form-group">
@@ -57,6 +62,7 @@ const RegisterPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              autoComplete="new-password"
             />
           </div>
           <div className="form-group">
