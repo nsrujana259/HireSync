@@ -26,7 +26,7 @@ function AvailableJobsPage() {
   const fetchAppliedJobs = async () => {
     try {
       const res = await axios.get(
-        `http://hiresync-backend.onrender.com/api/applications/seeker/${user._id}`
+        `http://hiresync-3492.onrender.com/api/applications/seeker/${user._id}`
       );
       const appliedIds = res.data.map((app) => app.jobId._id);
       setAppliedJobIds(appliedIds);
@@ -37,7 +37,7 @@ function AvailableJobsPage() {
 
   const handleApply = async (jobId) => {
     try {
-      await axios.post("https://hiresync-backend.onrender.com/api/applications/apply", {
+      await axios.post("https://hiresync-3492.onrender.com/api/applications/apply", {
         jobId,
         seekerId: user._id,
         resumeUrl: "",
