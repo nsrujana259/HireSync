@@ -1,56 +1,43 @@
-require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+const dotenv = require("dotenv");
 const path = require("path");
-const cors=require("cors");
+
+// Routes
 const authRoutes = require("./routes/authRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const applicationRoutes = require("./routes/applicationRoutes");
-const uploadRoutes = require("./routes/uploadRoute");
+const uploadRoute = require("./routes/uploadRoute");
 
+dotenv.config();
 const app = express();
 
-// ✅ Manual CORS headers middleware (to fix Render CORS issues)
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://hiresync-frontend.onrender.com");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-  next();
-});
+// CORS config
 app.use(cors({
-  origin: "https://hiresync-frontend.onrender.com",
+  origin: ["https://hiresync-frontend.onrender.com"], // ✅ allow frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  credentials: true,
 }));
-app.options("*", cors()); 
-// ✅ JSON body parser
-app.use(express.json());
 
-// ✅ Serve static uploaded files (for resumes, etc.)
+app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// ✅ Route registration
-app.use("/api/auth", authRoutes);
-app.use("/api/upload", uploadRoutes);
-app.use("/api/jobs", jobRoutes);
-app.use("/api/applications", applicationRoutes);
-
-// ✅ MongoDB connection
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => {
-  console.log("✅ MongoDB connected");
-}).catch((err) => {
-  console.error("❌ MongoDB connection error:", err);
-});
+})
+.then(() => console.log("✅ MongoDB Connected"))
+.catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// ✅ Start the server
+// Use routes
+app.use("/api/auth", authRoutes);
+app.use("/api/jobs", jobRoutes);
+app.use("/api/applications", applicationRoutes);
+app.use("/api/upload", uploadRoute);
+
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
