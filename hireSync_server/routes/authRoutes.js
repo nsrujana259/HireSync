@@ -1,7 +1,9 @@
+// routes/authRoutes.js
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 
+// Register route
 router.post("/register", async (req, res) => {
   try {
     const user = new User(req.body);
@@ -11,12 +13,12 @@ router.post("/register", async (req, res) => {
     if (err.code === 11000) {
       return res.status(409).json({ error: "Email already exists" });
     }
-
     console.error("🔥 Register Error:", err);
     res.status(500).json({ error: "Registration failed" });
   }
 });
 
+// Login route
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
