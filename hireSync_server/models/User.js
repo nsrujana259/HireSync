@@ -1,23 +1,18 @@
 // models/User.js
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
+  name: String,
   email: {
     type: String,
-    required: true,
-    unique: true, // optional but good practice
-  },
-  password: {
-    type: String,
+    unique: true,
     required: true,
   },
+  password: String,
   role: {
-    type: String,
-    enum: ["seeker", "recruiter"],
+    type: String, 
+    enum: ["jobseeker", "recruiter"], // 👈 Lowercase roles
     required: true,
   },
 });
