@@ -10,7 +10,10 @@ const applicationRoutes = require("./routes/applicationRoutes");
 const uploadRoutes = require("./routes/uploadRoute"); // ✅ Add this
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://hiresync-frontend.onrender.com', // ✅ frontend URL
+  credentials: true,
+}));
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRoutes); 
