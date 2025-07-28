@@ -16,7 +16,7 @@ function AvailableJobsPage() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("https://hiresync-backend.onrender.com/api/jobs");
+      const res = await axios.get("https://hiresync-3492.onrender.com/api/jobs");
       setJobs(res.data);
     } catch (err) {
       console.error("Error fetching jobs:", err);

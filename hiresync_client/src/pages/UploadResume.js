@@ -17,7 +17,7 @@ const UploadResume = () => {
     formData.append('userId', 'USER_ID_HERE'); // Replace this with actual user ID from login
 
     try {
-      await axios.post('https://hiresync-backend.onrender.com/api/upload/resume', formData);
+      await axios.post('https://hiresync-3492.onrender.com/api/upload/resume', formData);
       alert('Resume uploaded successfully!');
     } catch (err) {
       alert('Upload failed. Please try again.');

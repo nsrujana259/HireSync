@@ -7,14 +7,14 @@ const BrowseJobs = () => {
 
   useEffect(() => {
     axios
-      .get("https://hiresync-backend.onrender.com/api/jobs") // Update if your backend URL is different
+      .get("https://hiresync-3492.onrender.com/api/jobs") // Update if your backend URL is different
       .then((res) => setJobs(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   const handleApply = async (jobId) => {
     try {
-      const response = await axios.post("https://hiresync-backend.onrender.com/api/applications", {
+      const response = await axios.post("https://hiresync-3492.onrender.com/api/applications", {
         userId: user._id,
         jobId: jobId,
       });
