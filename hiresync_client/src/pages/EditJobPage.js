@@ -14,7 +14,7 @@ const EditJobPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://hiresync-backend.onrender.com/api/jobs/${jobId}`)
+      .get(`https://hiresync-backend.onrender.com/api/jobs/${jobId}`)
       .then((res) => {
         setJobData(res.data);
       })
@@ -36,7 +36,7 @@ const EditJobPage = () => {
         recruiter: recruiter._id,
       };
 
-      await axios.put(`http://hiresync-backend.onrender.com/api/jobs/${jobId}`, updatedData);
+      await axios.put(`https://hiresync-backend.onrender.com/api/jobs/${jobId}`, updatedData);
 
       alert("Job updated successfully!");
       navigate("/recruiter/dashboard");
@@ -51,7 +51,7 @@ const EditJobPage = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://hiresync-backend.onrender.com/api/jobs/${jobId}`);
+      await axios.delete(`https://hiresync-backend.onrender.com/api/jobs/${jobId}`);
       alert("Job deleted successfully!");
       navigate("/recruiter/dashboard");
     } catch (err) {
