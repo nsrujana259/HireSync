@@ -14,7 +14,7 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', {
+      await axios.post('http://hiresync-backend.onrender.com/api/auth/register', {
         name, email, password, role
       });
       navigate('/login');

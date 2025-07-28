@@ -8,7 +8,7 @@ const ViewApplicantsPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/applications/job/${jobId}`)
+      .get(`http://hiresync-backend.onrender.com/api/applications/job/${jobId}`)
       .then((res) => setApplicants(res.data))
       .catch((err) => {
         console.error("Error fetching applicants:", err);

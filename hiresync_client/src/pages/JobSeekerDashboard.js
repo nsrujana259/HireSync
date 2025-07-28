@@ -17,8 +17,8 @@ const JobSeekerDashboard = () => {
         email: "nsrujana@gmail.com",
       };
       setUser(storedUser);
-      setResume(null); // Change this to simulate resume presence
-      setApplications([]); // Simulate applications
+      setResume(null);
+      setApplications([]);
       setLoading(false);
     }, 1000);
   }, []);
@@ -27,7 +27,7 @@ const JobSeekerDashboard = () => {
     const file = e.target.files[0];
     if (file) {
       alert(`Resume "${file.name}" uploaded successfully.`);
-      setResume(file); // Simulate storing
+      setResume(file); 
     }
   };
 

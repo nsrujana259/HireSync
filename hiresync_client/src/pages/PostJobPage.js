@@ -20,7 +20,7 @@ const PostJobPage = () => {
     const recruiterId = user._id;
 
     try {
-      await axios.post('http://localhost:5000/api/jobs', {
+      await axios.post('http://hiresync-backend.onrender.com/api/jobs', {
         title,
         description,
         location,

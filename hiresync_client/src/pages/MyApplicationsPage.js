@@ -15,7 +15,7 @@ const MyApplicationsPage = () => {
   const fetchApplications = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/applications/seeker/${user._id}`
+        `http://hiresync-backend.onrender.com/api/applications/seeker/${user._id}`
       );
 
       // Optional: filter out applications with missing jobId
@@ -37,7 +37,7 @@ const MyApplicationsPage = () => {
 
   const handleDelete = async (applicationId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/applications/${applicationId}`);
+      await axios.delete(`http://hiresync-backend.onrender.com/api/applications/${applicationId}`);
       // Remove from state
       setApplications((prev) => prev.filter((app) => app._id !== applicationId));
       alert("Application deleted successfully.");

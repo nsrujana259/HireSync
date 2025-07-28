@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000', // Change if your backend is on a different port or deployed
+  baseURL: 'http://hiresync-backend.onrender.com', // Change if your backend is on a different port or deployed
   headers: {
     'Content-Type': 'application/json',
   },

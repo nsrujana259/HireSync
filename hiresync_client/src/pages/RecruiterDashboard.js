@@ -26,7 +26,7 @@ const RecruiterDashboard = () => {
   const fetchApplicants = async (jobId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/applications/job/${jobId}`
+        `http://hiresync-backend.onrender.com/api/applications/job/${jobId}`
       );
       setSelectedJob({ ...selectedJob, _id: jobId, applicants: res.data });
     } catch (err) {
