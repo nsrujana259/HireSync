@@ -1,0 +1,105 @@
+/* Container */
+.dashboard {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f7f9fc;
+  border-radius: 16px;
+}
+
+/* Title */
+.dashboard-title {
+  text-align: center;
+  color: #1e3a8a;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card Titles */
+.card-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+/* Info Text */
+.info-row {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Resume Status */
+.status {
+  font-weight: bold;
+}
+
+.uploaded {
+  color: #16a34a;
+}
+
+.not-uploaded {
+  color: #dc2626;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.primary:hover {
+  background-color: #1e40af;
+}
+
+.secondary {
+  background-color: #e5e7eb;
+  color: #111827;
+  margin-right: 10px;
+}
+
+.secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}

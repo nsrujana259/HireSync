@@ -1,0 +1,55 @@
+/* src/pages/HomePage.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Full-page background */
+.home-wrapper {
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add a dark overlay for readability */
+.home-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 60px 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 600px;
+}
+
+.home-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.home-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.home-overlay .btn {
+  background-color: #ffffff !important;
+  color: #000 !important;
+  border: 2px solid #ffffff;
+  padding: 10px 50px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.home-overlay .btn:hover {
+  background-color: #e2e8f0 !important;
+  color: #000 !important;
+  border-color: #e2e8f0;
+}

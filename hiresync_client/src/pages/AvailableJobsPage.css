@@ -1,0 +1,38 @@
+/* AvailableJobsPage.css */
+.jobs-page {
+  background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1740&q=80");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 30px;
+  color: white;
+}
+
+.jobs-page h1,
+.jobs-page h3,
+.jobs-page p,
+.jobs-page strong {
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.job-card {
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent dark bg */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.jobs-page button {
+  padding: 8px 16px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.jobs-page button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}

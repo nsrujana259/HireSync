@@ -1,0 +1,51 @@
+.page-container {
+  display: flex;
+  height: 100vh;
+}
+
+.background-side {
+  flex: 1;
+  background-image: url('https://images.unsplash.com/photo-1581091870622-2c9b1e1a96c0?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.form-side {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  width: 90%;
+  max-width: 500px;
+  background-color: transparent;
+  color: white;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #222;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2c74f5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e58c5;
+}
